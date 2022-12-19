@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:http/http.dart' as http;
 import 'package:news_app/models/newModels.dart';
 
@@ -37,6 +39,10 @@ class FetchNewsServices {
 
   // Function to make Network Calls from json placeholder "post" request
   Future<News?> getNews() async {
+    final _random =Random();
+
+    var sourceId = sourcesId[_random.nextInt(sourcesId.length)];
+    print(':::::::::::::::::::::::::::$sourceId');
     //setup http client
     var uri = Uri.parse(
         'https://newsapi.org/v2/top-headlines?country=us&apiKey=0b77311fbbdc4605a599dc487655f65c');
