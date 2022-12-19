@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    RemoteServices().getNews();
+   // RemoteServices().getNews();
     return Scaffold(
       // appBar: AppBar(
       //   title: Text(widget.title),
