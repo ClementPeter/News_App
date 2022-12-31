@@ -36,9 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
+      
+      
       body: PageView.builder(
         controller: PageController(initialPage: 2),
         scrollDirection: Axis.horizontal,
