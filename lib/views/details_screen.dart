@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class DetailsScreen extends StatefulWidget {
   DetailsScreen({this.newsUrl, super.key});
@@ -22,8 +22,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
     });
   }
 
-  // final Completer<WebViewController> _controller =
-  //     Completer<WebViewController>();
+  final Completer<WebViewController> _controller =
+      Completer<WebViewController>();
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +32,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
         title: Text("name of app"),
         centerTitle: true,
       ),
-
-      // //Setup WebView
-      // body: WebView(
-      //   initialUrl: widget.newsUrl,
-      //   javascriptMode: JavascriptMode.unrestricted,
-      //   onWebViewCreated: (WebViewController webViewController) {
-      //     setState(() {
-      //       _controller.complete(webViewController);
-      //       });
+      //Setup WebView
+      body: WebView(
+        initialUrl: widget.newsUrl,
+        javascriptMode: JavascriptMode.unrestricted,
+        onWebViewCreated: (WebViewController webViewController) {
+          setState(() {
+            _controller.complete(webViewController);
+            });
           
-      //   },  
-      // ),
+        },  
+      ),
     );
   }
 }
