@@ -22,8 +22,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
     });
   }
 
-  final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
+  // final Completer<WebViewController> _controller =
+  //     Completer<WebViewController>();
 
   @override
   Widget build(BuildContext context) {
