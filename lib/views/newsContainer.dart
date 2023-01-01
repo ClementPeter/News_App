@@ -79,16 +79,8 @@ class NewsContainer extends StatelessWidget {
                 : content!,
             style: const TextStyle(fontSize: 20),
           ),
-          // const Spacer(),
-          // ElevatedButton(
-          //   onPressed: () {
-          //     Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => DetailsScreen()));
-          //   },
-          //   child: const Text('Read More'),
-          // ),
           Expanded(child: SizedBox()),
-          //Expanded(child: Container()),
+       
           Align(
             alignment: Alignment.bottomRight,
             child: RawMaterialButton(
