@@ -11,6 +11,8 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  WebViewController? _controller;
+  final link = "https://www.youtube.com"; //default link of webview
   @override
   void initState() {
     // TODO: implement initState
@@ -36,12 +38,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
       body: WebView(
         initialUrl: widget.newsUrl,
         javascriptMode: JavascriptMode.unrestricted,
-        onWebViewCreated: (WebViewController webViewController) {
+        onWebViewCreated: ( _controller) {
           setState(() {
-            _controller.complete(webViewController);
-            });
-          
-        },  
+            //_controller.complete(webViewController);
+
+          });
+        },
       ),
     );
   }
