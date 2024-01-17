@@ -79,22 +79,22 @@ class NewsContainer extends StatelessWidget {
                 : content!,
             style: const TextStyle(fontSize: 20),
           ),
-          Expanded(child: SizedBox()),
-       
+          const Expanded(child: SizedBox()),
+
           Align(
             alignment: Alignment.bottomRight,
             child: RawMaterialButton(
               fillColor: Colors.blue,
               elevation: 5,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsScreen(
-                      newsUrl: url!,
-                    ),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => DetailsScreen(
+                //       newsUrl: url!,
+                //     ),
+                //   ),
+                // );
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),

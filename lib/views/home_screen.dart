@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   NewsArticle? newsArticle;
   final PageController controller = PageController(initialPage: 0);
 
-  getNews() async {
+  Future getNews() async {
     newsArticle = await FetchNewsServices.fetchNews();
     setState(() {
       isLoading = false;
@@ -25,7 +25,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getNews();
     super.initState();
   }
