@@ -40,22 +40,24 @@ class NewsContainer extends StatelessWidget {
         children: [
           //Url Image
           Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(90),
-            ),
-            child: Image.network(
-              urlToImage!,
-              fit: BoxFit.cover,
-              height: 200,
-              width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                urlToImage ??
+                    "https://img.freepik.com/free-vector/breaking-news-concept_23-2148514216.jpg?w=2000",
+                fit: BoxFit.cover,
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+              ),
             ),
           ),
           const SizedBox(height: 10),
-
+          //News Title
           Text(
             title!.length > 70 ? title!.substring(0, 70) : title!,
             style: const TextStyle(
-              fontSize: 20,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -65,16 +67,11 @@ class NewsContainer extends StatelessWidget {
             style: const TextStyle(fontSize: 12),
           ),
           const SizedBox(height: 10),
-          // Text(
-          //   content!,
-          //   style: const TextStyle(fontSize: 15),
-          // ),
-          const SizedBox(height: 10),
+          //description,
           Text(
-            //description,
             content != "--"
                 ? content!.length > 250
-                    ? content!.substring(0, 100)
+                    ? content!.substring(0, 200)
                     : "${content.toString().substring(0, content!.length - 20)}..."
                 : content!,
             style: const TextStyle(fontSize: 20),

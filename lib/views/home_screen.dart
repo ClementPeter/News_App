@@ -14,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //
   bool isLoading = true; //toggle loading spinner
   NewsArticle? newsArticle;
-  final PageController controller = PageController(initialPage: 0);
+  final PageController controller = PageController();
 
   Future getNews() async {
     newsArticle = await FetchNewsServices.fetchNews();
@@ -31,7 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //FetchNewsServices.fetchNews();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
